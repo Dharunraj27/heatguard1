@@ -9,7 +9,7 @@ export const SosButton: React.FC = () => {
   const [sosTriggered, setSosTriggered] = useState<boolean>(false);
 
   useEffect(() => {
-    let timer: NodeJS.Timeout;
+    let timer: ReturnType<typeof setInterval> | undefined;
     if (holding && !sosTriggered) {
       timer = setInterval(() => {
         setProgress((prev) => {
